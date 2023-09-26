@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Form</title>
+</head>
+<body>
+    <h1>Add New Employee</h1>
+    <form>
+        <div class="first-name">
+            <label for="f-name">First Name: </label>
+            <input  name="fName" required type="text" placeholder="enter your name...">
+        </div>
+        <!-- <br>  -->
+        <div class="last-name">
+            <label for="l-name">Last Name: </label>
+            <input  name="lName" required type="text" placeholder="enter your last name...">
+        </div>
+        <div class="email">
+            <label for="email">Email: </label>
+            <input name="email" type="email" placeholder="enter your email...">
+        </div>
+        <div class="department">
+            <label for="department">Department: </label>
+            <select name="department" id="department">
+                <option value="it">IT</option>
+                <option value="hr">HR</option>
+                <option value="finance">Finance</option>
+                <option value="marketing">Marketing</option>
+            </select>
+        </div>
+        <div class="position">
+            <label for="position">Position: </label>
+            <input name="position" type="text" placeholder="enter your position...">
+        </div>
+        <div class="salary">
+            <label for="salary">Salary: </label>
+            <input name="salary" type="number" min="0" max="5000" step="10">
+        </div>
+        <button type="submit">Add Employee</button>
+        <button type="reset">Cancel</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Student Form</title>
+</head>
+<body>
+    <h1>Register Student Form</h1>
+    <form action="">
+        <label for="full-name">Full Name: </label>
+        <input minlength="3" maxlength="50" id="full-name" name="fullName" type="text" placeholder="full name"> <br>
+        <label for="age">Age: </label>
+        <input type="number" min="17" max="30" placeholder="age"> <br>
+        <label for="email">Email: </label>
+        <input type="email" id="email" name="email" placeholder="email"> <br>
+        <label for="password">Password: </label>
+        <input type="password" name="password" id="password" placeholder="password"> <br>
+        <label for="confirm-password">Confirm Password: </label>
+        <input type="password" name="confirm-password" id="confirm-password" placeholder="confirm password"> <br>
+        <label for="terms-of-use">Terms of Use</label>
+        <input name="terms-of-use" id="terms-of-use" type="checkbox"> <br>
+        <span for="gender">Select your Gender: </span> <br>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender"> <br>
+        <label for="birth-date">Select your birth-date: </label>
+        <input type="date" id="birth-date" name="birth-date"> <br>
+        <label for="profile">Upload Image: </label>
+        <input multiple id="profile" name="profile-pic" type="file" accept="image/png, image/jpeg"> <br>
+        <label for="hair-color">Hair Color: </label>
+        <input type="color" name="hair-color" id="hair-color"> <br>
+        <label for="credit">Credit</label>
+        <input type="range" min="100" max="1000"> <br>
+        <label for="nationality">Nationality</label>
+        <select name="nationality" id="nationality">
+            <option value="az">Azerbaijan</option>
+            <option value="tr">Turkey</option>
+            <option value="ru">Russia</option>
+        </select>
+        <br>
+        <button type="submit" disabled>Register New Student</button>
+        <button type="reset">Cancel</button>
+    </form>
+</body>
+</html>

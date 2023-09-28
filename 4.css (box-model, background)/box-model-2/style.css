@@ -1,0 +1,31 @@
+*{
+    font-family: 'Roboto';
+}
+.outer-box{
+    width: 80%;
+    border: 1px solid #CCCCCC;
+    margin: 0 auto;
+    padding: 20px 20px 25px 15px;
+    background-color: #F0F0F0;
+    box-shadow: 1px 0px 15px rgb(142, 142, 142);
+}
+.outer-box>h1{
+    color: #333333;
+}
+.inner-box{
+    border: 2px solid #3498DB;
+    padding: 25px 0px 20px 15px;
+    width: 90%;
+    margin: 0 auto;
+    background-color: white;
+}
+.inner-box button{
+    background-color: #3498DB;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 20px;
+}
+.inner-box button:hover{
+    background-color: #1e6ab0;
+}

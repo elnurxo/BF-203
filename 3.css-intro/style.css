@@ -1,0 +1,43 @@
+/* selection */
+/* marker */
+/* first-letter */
+/* first-line */
+/* before */
+/* after */
+p::selection{
+    background-color:red;
+    color: white;
+}
+ul{
+    color: red;
+}
+ul li::marker{
+    color: blue;
+}
+h1::first-letter{
+    color: brown;
+    background-color: black;
+}
+p::first-line{
+    text-decoration: underline;
+}
+h2{
+    position: relative;
+}
+h2::before{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    content: '';
+    width: 0px;
+    height: 2px;
+    background-color: black;
+    transition: 2s;
+}
+h2:hover::before{
+    width: 130px;
+}
+button:hover+h2{
+    color: red;
+}

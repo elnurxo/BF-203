@@ -1,0 +1,73 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+nav{
+    height: 50px;
+    width: 100%;
+    background-color: red;
+}
+header {
+  width: 100%;
+  height: 100px;
+  background-color: burlywood;
+  position: sticky;
+  top: 0px;
+  z-index: 99;
+}
+body {
+  height: 200vh;
+}
+header ul li {
+  height: 20px;
+  display: inline-block;
+  padding: calc(50px - 10px);
+}
+main {
+  padding-top: 200px;
+}
+#contact-us {
+  position: relative;
+  z-index: -1;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px,
+    rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+  width: 70%;
+  margin: 0 auto;
+  height: 450px;
+}
+#contact-us iframe {
+  width: 100%;
+  height: 100%;
+}
+#contact-us .contact-form {
+  position: absolute;
+  left: calc(50% - 15%);
+  top: -50px;
+  width: 30%;
+  height: 100px;
+  border-radius: 10px;
+  background: rgb(122, 255, 112);
+  background: linear-gradient(
+    308deg,
+    rgba(122, 255, 112, 1) 0%,
+    rgba(115, 243, 255, 1) 31%,
+    rgba(118, 185, 255, 1) 67%,
+    rgba(208, 121, 255, 1) 100%
+  );
+
+}
+
+.to-up-btn{
+    position: fixed;
+    right: 4%;
+    bottom: 6%;
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    padding: 22px 23px;
+}
+html{
+    scroll-behavior:smooth;
+}

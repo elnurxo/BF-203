@@ -1,0 +1,15 @@
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: olive;
+    border: 1px solid green;
+}
+span{
+    display: inline-block;
+    margin-top: 20px;
+    margin-right: 20px;
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 600;
+}

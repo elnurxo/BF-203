@@ -1,0 +1,23 @@
+.olive-box{
+    width: 80%;
+    height: 600px;
+    border: 5px solid olive;
+    margin: 0 auto;
+    position: relative;
+}
+.olive-box .lime-box{
+    width: 60%;
+    height: 400px;
+    border: 5px solid lime;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.olive-box .lime-box .brown-box{
+    width: 50%;
+    height: 200px;
+    border: 5px solid brown;
+    position: absolute;
+    left: calc(50% - 25%);
+    top: calc(50% - 100px);
+}

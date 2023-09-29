@@ -1,0 +1,44 @@
+.dashed-box{
+    border: 4px dashed black;
+    width: 86%;
+    height: 500px;
+    margin: 40px auto;
+    position: relative;
+}
+.box{
+    width: 250px;
+    height: 100px;
+    position: absolute;
+    text-align: center;
+    font-weight: bold;
+}
+.box p{
+    line-height: 40px;
+    margin-top: 10%;
+}
+.red-box{
+ background-color: red;
+ top: 0;
+ left: 0;
+}
+.orange-box{
+ background-color: orange;
+ top: 0;
+ right: 0;
+}
+.yellow-box{
+ background-color: yellow;
+ bottom: 0;
+ left: 0;
+}
+.skyblue-box{
+ background-color: skyblue;
+ left: calc(50% - 250px / 2);
+ top: calc(50% - 100px / 2);
+
+}
+.limegreen-box{
+ background-color: limegreen;
+ bottom: 0;
+ right: 0;
+}

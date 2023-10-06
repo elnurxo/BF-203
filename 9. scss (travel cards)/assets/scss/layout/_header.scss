@@ -1,0 +1,25 @@
+header{
+    background-color: skyblue;
+    height: 80px;
+    width: 100%;
+    nav{
+        height: 100%;
+        width:80%;
+        margin: 0 auto;
+        @include flexbox($align-a:center, $justify-c:space-between);
+        .links{
+            @include flexbox(space-between, center);
+            li{
+                margin-right: 20px;
+                a{
+                    color: $link-color;
+                    font-family: $main-font;
+                    transition: .3s linear;
+                    &:hover{
+                        color: $link-hover-color;
+                    }
+                }
+            }
+        }
+    }
+}

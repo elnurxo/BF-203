@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.main-title {
+  text-align: center;
+  font-family: "K2D", sans-serif;
+  color: #292b2c;
+  font-size: 2rem;
+  padding-bottom: 1.3rem;
+  margin-top: 50px;
+}
+
+.main-paragraph {
+  text-align: center;
+  color: #888888;
+  padding: 0px 7%;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+}
+
+.logo h1 {
+  font-family: "K2D", sans-serif;
+  color: #292b2c;
+}
+
+h2 {
+  font-family: "K2D", sans-serif;
+  color: #313131;
+}
+
+.card {
+  width: 30%;
+  border-radius: 7px;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.card-img-wrapper {
+  position: relative;
+  height: 230px;
+  width: 100%;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  overflow: hidden;
+}
+.card-img-wrapper img {
+  transition: 0.3s linear;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.card-img-wrapper .btn {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 0;
+  border: none;
+  border-radius: 5px;
+  padding: 14px 24px;
+  background-color: #ff7a58;
+  color: white;
+  font-family: "Poppins";
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s linear;
+}
+.card-img-wrapper .btn:hover {
+  transform: translateX(-50%) scale(0.9);
+  background-color: #b0553e;
+}
+.card:hover .btn {
+  top: calc(50% - 30px);
+  visibility: visible;
+  opacity: 1;
+}
+.card:hover .card-img-wrapper img {
+  filter: brightness(60%);
+}
+.card-details {
+  padding: 10px 20px 20px 20px;
+}
+.card-details article {
+  border-bottom: 1px solid gray;
+}
+.card-details article .card-title {
+  margin-bottom: 10px;
+}
+.card-details article .card-content {
+  color: #646464;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  padding-bottom: 10px;
+  font-weight: 300;
+}
+.card-details .price-and-ratings {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+  height: 55px;
+}
+.card-details .price-and-ratings .price span {
+  display: block;
+  font-family: "K2D", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: #ff7a58;
+  padding-top: 10px;
+}
+.card-details .price-and-ratings .price p {
+  color: #888888;
+  font-size: 15px;
+  padding-top: 0.25rem;
+  font-family: "K2D", sans-serif;
+}
+.card-details .price-and-ratings .ratings {
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  justify-content: space-between;
+  height: 100%;
+}
+.card-details .price-and-ratings .ratings .stars {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.card-details .price-and-ratings .ratings .stars li {
+  margin-right: 4px;
+}
+.card-details .price-and-ratings .ratings .stars li i {
+  color: #ff7a58;
+  font-size: 12px;
+}
+.card-details .price-and-ratings .ratings p {
+  color: #888888;
+  font-size: 15px;
+  padding-top: 0.25rem;
+  font-family: "K2D", sans-serif;
+}
+
+header {
+  background-color: skyblue;
+  height: 80px;
+  width: 100%;
+}
+header nav {
+  height: 100%;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .links {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header nav .links li {
+  margin-right: 20px;
+}
+header nav .links li a {
+  color: black;
+  font-family: "K2D", sans-serif;
+  transition: 0.3s linear;
+}
+header nav .links li a:hover {
+  color: rgb(68, 68, 68);
+}
+
+#popular-tours #top-article {
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+#popular-tours .cards-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}/*# sourceMappingURL=main.css.map */

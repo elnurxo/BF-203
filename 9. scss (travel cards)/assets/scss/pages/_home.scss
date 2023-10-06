@@ -1,0 +1,12 @@
+#popular-tours{
+    #top-article{
+        width: 50%;
+        margin: 0 auto;
+        margin-bottom: 60px;
+    }
+    .cards-wrapper{
+        width: 80%;
+        margin: 0 auto;
+        @include flexbox(space-between,center);
+    }
+}

@@ -1,0 +1,89 @@
+h1 {
+  text-align: center;
+}
+.container {
+  position: relative;
+  border: 2px solid black;
+  width: 90%;
+  height: 70vh;
+  margin: 0 auto;
+}
+.container .box {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  background-color: olive;
+  /* animation-name: movement;
+  animation-duration: 4s;
+  animation-iteration-count: infinite; */
+  animation: movement 3s linear infinite, color 4s linear infinite;
+}
+.container .box:hover {
+  animation-play-state: paused;
+}
+.container .emoji{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    animation: heartbeat 3s linear infinite;
+}
+
+/* heartbeat animation */
+@keyframes heartbeat {
+    0%{
+        transform:translate(-50%, -50%) scale(1);
+    }
+    33%{
+        transform:translate(-50%, -50%) scale(0.6);
+    }
+    66%{
+        transform:translate(-50%, -50%) scale(1.6);
+    }
+    100%{
+        transform:translate(-50%, -50%) scale(1);
+    }
+}
+
+/* movement animation */
+
+@keyframes movement {
+  0% {
+    left: 0;
+    top: 0;
+  }
+  25% {
+    top: 0;
+    left: calc(100% - 100px);
+  }
+  50% {
+    left: calc(100% - 100px);
+    top: calc(100% - 100px);
+  }
+  75% {
+    left: 0;
+    top: calc(100% - 100px);
+  }
+  100% {
+    left: 0;
+    top: 0;
+  }
+}
+
+@keyframes color {
+    0%{
+        background-color: olive;
+    }
+    25%{
+         background-color: red;
+    }
+    75%{
+        background-color: orange;
+    }
+    100%{
+        background-color: olive;
+    }
+}

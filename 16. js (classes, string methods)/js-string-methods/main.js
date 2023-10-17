@@ -52,3 +52,45 @@
 // console.log(IsFound('hello world','apple'));
 
 //TASK 8
+function Human(name, surname, birthYear, birthCity) {
+  this.name = name;
+  this.surname = surname;
+  this.birthCity = birthCity;
+  this.birthYear = birthYear;
+  this.getFullName = function () {
+    return this.name + " " + this.surname;
+  };
+}
+const joe = new Human("Joe", "Smith", 1980, "Chicago");
+const joe2 = new Human("Joe", "Beckham", 1980, "Chicago");
+const jane = new Human("Jane", "Smith", 1984, "New York");
+const adam = new Human("Adam", "Sandler", 1999, "Chicago");
+let people = [];
+people.push(joe,joe2, jane, adam);
+
+let searchInput = prompt("search for human: ");
+
+function searchHuman(search, arr) {
+  let result = [];
+  for (let i = 0; i < arr.length; i++) {
+    let fullName = arr[i].getFullName();
+    if (
+      arr[i].name.toLowerCase().trim().includes(search.toLowerCase().trim()) ||
+      arr[i].surname
+        .toLowerCase()
+        .trim()
+        .includes(search.toLowerCase().trim()) ||
+      fullName.toLowerCase().trim().includes(search.toLowerCase().trim())
+    ) {
+      result.push(arr[i]);
+    }
+  }
+  if (result.length) {
+    return result;
+  } else {
+    return alert(`not found ${search}`);
+  }
+}
+
+let resultArr = searchHuman(searchInput, people);
+console.log(resultArr);

@@ -1,0 +1,7 @@
+custom methods - prototype
+callback functions, HOF (higher order functions)
+array iteration methods
+for in, for of
+-----
+reduce
+localCompare

@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "username": "elnurxo",
+      "password": "Admin123",
+      "email": "elnur@gmail.com"
+    },
+    {
+      "email": "elnur1@gmail.com",
+      "username": "elnur",
+      "password": "Admin123",
+      "id": 2
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "coca cola",
+      "price": 5.5,
+      "stockCount": 10,
+      "imageLink": "https://cdn.gobankingrates.com/wp-content/uploads/2019/05/Coca-Cola-can-dropped-in-water-shutterstock_559599946.jpg?webp=1&w=1280&quality=75"
+    },
+    {
+      "id": 2,
+      "name": "fanta",
+      "price": 3.5,
+      "stockCount": 6,
+      "imageLink": "https://www.bakenroll.az/en/image/fanta.jpg"
+    },
+    {
+      "id": 3,
+      "name": "sprite",
+      "price": 2.2,
+      "stockCount": 21,
+      "imageLink": "https://www.bakenroll.az/en/image/sprite-1.jpg"
+    },
+    {
+      "id": 4,
+      "name": "DR.Pepper",
+      "price": 8.5,
+      "stockCount": 4,
+      "imageLink": "https://m.media-amazon.com/images/I/81y7OsLt3EL.jpg"
+    }
+  ]
+}

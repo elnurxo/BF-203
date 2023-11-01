@@ -1,0 +1,24 @@
+header {
+  background: rgb(99, 219, 209);
+  background: linear-gradient(
+    174deg,
+    rgba(99, 219, 209, 1) 0%,
+    rgba(75, 134, 228, 1) 100%
+  );
+  height: 80px;
+}
+header>div{
+    height: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a{
+    color: black;
+    font-weight: bold;
+}
+ul{
+    list-style: none;
+}

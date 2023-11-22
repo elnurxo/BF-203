@@ -1,4 +1,4 @@
-import ACTIONS from "../../actions/counter.actions";
+import ACTIONS from "../actions/counter.actions";
 
 export default function reducer(state, action) {
   switch (action.type) {

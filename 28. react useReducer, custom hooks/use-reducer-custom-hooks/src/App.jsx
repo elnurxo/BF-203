@@ -1,6 +1,6 @@
 import { useReducer } from "react";
 import "./App.css";
-import ACTIONS from "./constants/ACTIONS";
+import ACTIONS from "../actions/counter.actions";
 import reducer from "./reducers/counter.reducer";
 
 

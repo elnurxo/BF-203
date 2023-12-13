@@ -177,14 +177,95 @@ class Motorcycle implements IVehicle<number> {
     }
 }
 
-const motorcycle = new Motorcycle("Honda", "CBR500R", 2022, 30, 15, 25, 0.04, EngineType.DOHC, VehicleType.Motorcycle, "Sportbike");
+// const motorcycle = new Motorcycle("Honda", "CBR500R", 2022, 30, 15, 25, 0.04, EngineType.DOHC, VehicleType.Motorcycle, "Sportbike");
 
-motorcycle.getInfo();
-console.log(motorcycle.drive(30));
-motorcycle.startEngine();
+// motorcycle.getInfo();
+// console.log(motorcycle.drive(30));
+// motorcycle.startEngine();
 
 
-const car = new Car("Toyota", "Camry", 2022, 50, 30, 20, 0.05, EngineType.DOHC, VehicleType.Car);
+// const car = new Car("Toyota", "Camry", 2022, 50, 30, 20, 0.05, EngineType.DOHC, VehicleType.Car);
 
-car.getInfo();
-console.log(car.drive(50));
+// car.getInfo();
+// console.log(car.drive(50));
+
+
+//TASK 2 ANIMALS
+interface IAnimal {
+    readonly name: string;
+    readonly age: number;
+    //method signature
+    getInfo(): void;
+}
+abstract class Animal implements IAnimal {
+    readonly name: string;
+    private _age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this._age = age;
+    }
+
+    get age(): number {
+        return this._age;
+    }
+
+
+    getInfo(): void {
+        console.log(`Name: ${this.name}, Age: ${this._age} years`);
+    }
+}
+interface IBird {
+    wingColor: string;
+    fly(): void;
+}
+class Bird extends Animal implements IBird {
+    wingColor: string;
+
+    constructor(name: string, age: number, wingColor: string) {
+        super(name, age);
+        this.wingColor = wingColor;
+    }
+
+    fly(): void {
+        console.log(`${this.name} is flying with ${this.wingColor} wings!`);
+    }
+}
+
+enum LivePlace {
+    Sea = "Sea",
+    Ocean = "Ocean",
+    River = "River",
+}
+type killType = string[] | string;
+interface IKill<T extends killType> {
+    kill: T;
+}
+// IFish interface
+interface IFish extends IKill<killType> {
+    livePlace: LivePlace;
+    swim(): void;
+}
+class Fish extends Animal implements IFish {
+    livePlace: LivePlace;
+    kill: killType;
+
+    constructor(name: string, age: number, livePlace: LivePlace, kill: killType) {
+        super(name, age);
+        this.livePlace = livePlace;
+        this.kill = kill;
+    }
+
+    swim(): void {
+        console.log(`${this.name} is swimming in the ${this.livePlace}`);
+    }
+}
+
+const myFish = new Fish("Nemo", 1, LivePlace.Sea, ["small fish", "plankton"]);
+myFish.getInfo();
+myFish.swim(); 
+console.log(myFish.kill);
+
+const myBird = new Bird("Robin", 2, "red");
+myBird.getInfo(); 
+myBird.fly(); 

@@ -1,0 +1,15 @@
+task 2 shert
+abstract class - Animal class (implement IAnimal interface)
+IAnimal - name (readonly), age (readonly),getInfo method
+
+IBird interface - fly -method, wingColor
+IFish interface - swim method, livePlace (enum - river, ocean, sea), kill (generics (array de ola biler, string de))
+IFish interface-i IKill interface-inden extend etmelidir ve string ve ya string array ola bilecek bir generics qebul
+etmelidir. kill property-sine ise hemin deyeri teyin etmelidir
+
+
+Bird - extends Animal, implement IBird
+Fish - extends Animal, implement IFish
+
+Bird class - bir bird yaradin
+Fish class - bir fish yaradin

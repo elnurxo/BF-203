@@ -1,0 +1,21 @@
+----------------PART 1----------------------------
+IHuman interface - (name, surname, age, getInfo)
+Abstract Human class yaradin- (name (private), surname (private), age, fullName getter, name & surname getter, getInfo - method)
+
+Human-dan miras alan 2 class var (Employee ve Student)
+IEmployee interface - salary, skills (generic type), position (Position enum) - Employee class-i bu interface-den implement etmelidir
+IStudent interface - groupName, hobbies (generic type), GPA, hasPassed (methoddur, geriye true/false return edir)
+Student class-i yuxaridaki interface-den implement edir. GPA private olmalidir. GPA ucun bir getter bir de setter yazirsiniz.
+Setter-de yoxlamalisiniz ki, 0-100 araliginda set ede bilsin.
+hasPassed method-unda ise eger GPA 50-den azdirsa false return edir 51-100 araligindadirsa true return edir.
+-----------------PART 2----------------------------
+HTML-de bir form duzeldirsiniz. form-da name input, surname input, age input, 
+bir eded select option olmalidir (option-lar: student, employee)
+select option-da uygun option sechildikden sonra:
+eger student sechilerse: groupName, GPA, hobbies ucun 3 input gorunmelidir.
+eger employee sechilerse: salary, skills (text input - vergulle ayirirsiniz), position (select option (static yazin heleki))
+
+butun input-lari doldurub submit etdikde list item elave olunmalidir ve input-lar temizlenmelidir.
+-----------------PART 3-----------------------------
+
+

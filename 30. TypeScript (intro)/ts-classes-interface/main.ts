@@ -206,6 +206,7 @@ abstract class Animal implements IAnimal {
         this._age = age;
     }
 
+
     get age(): number {
         return this._age;
     }
@@ -245,6 +246,7 @@ interface IKill<T extends killType> {
 interface IFish extends IKill<killType> {
     livePlace: LivePlace;
     swim(): void;
+    
 }
 class Fish extends Animal implements IFish {
     livePlace: LivePlace;

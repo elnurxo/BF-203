@@ -1,0 +1,111 @@
+const express = require('express');
+const multer = require('multer');
+const { v4: uuidv4 } = require('uuid');
+const AWS = require('aws-sdk');
+const mongoose = require('mongoose');
+
+const app = express();
+const port = 3000;
+
+// Set up AWS SDK with your credentials and region
+AWS.config.update({
+  accessKeyId: 'YOUR_ACCESS_KEY_ID',
+  secretAccessKey: 'YOUR_SECRET_ACCESS_KEY',
+  region: 'YOUR_AWS_REGION',
+});
+
+const s3 = new AWS.S3();
+
+// Connect to MongoDB (replace 'YOUR_MONGODB_CONNECTION_STRING' with your actual MongoDB connection string)
+mongoose.connect('YOUR_MONGODB_CONNECTION_STRING', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+// Define a MongoDB schema and model for user data
+const userSchema = new mongoose.Schema({
+  username: String,
+  profilePicture: String, // Store the S3 URL here
+});
+
+const User = mongoose.model('User', userSchema);
+
+// Create a storage engine using multer
+const storage = multer.memoryStorage(); // Store files in memory as buffers
+
+// File validation function
+function fileFilter(req, file, cb) {
+  const allowedTypes = ['image/jpeg', 'image/png', 'video/mp4'];
+
+  if (!allowedTypes.includes(file.mimetype)) {
+    const error = new Error('Invalid file type');
+    error.code = 'LIMIT_FILE_TYPES';
+    return cb(error, false);
+  }
+
+  cb(null, true);
+}
+
+// Set up multer middleware with error handling and file validation
+const upload = multer({
+  storage: storage,
+  fileFilter: fileFilter,
+  limits: {
+    fileSize: 1024 * 1024 * 5, // 5MB file size limit
+  },
+});
+
+// POST endpoint for user data and profile picture upload
+app.post('/user', upload.single('profilePicture'), async (req, res) => {
+  try {
+    // Extract data from the request
+    const { username } = req.body;
+
+    // Check if a file was provided in the request
+    if (!req.file) {
+      throw new Error('No file uploaded');
+    }
+
+    // Save the file to AWS S3
+    const params = {
+      Bucket: 'your-s3-bucket-name',
+      Key: `user-profiles/${uuidv4()}-${req.file.originalname}`,
+      Body: req.file.buffer,
+      ContentType: req.file.mimetype,
+    };
+
+    const s3Response = await s3.upload(params).promise();
+    const s3Url = s3Response.Location;
+
+    // Save user data to MongoDB with the S3 URL
+    const newUser = new User({
+      username,
+      profilePicture: s3Url,
+    });
+
+    await newUser.save();
+
+    res.status(201).json({ message: 'User created successfully' });
+  } catch (error) {
+    console.error(error);
+
+    // Handle specific file upload errors
+    if (error.code === 'LIMIT_FILE_TYPES') {
+      return res.status(400).json({ message: 'Invalid file type. Allowed types: JPEG, PNG, MP4' });
+    }
+
+    res.status(500).json({ message: 'Internal Server Error' });
+  }
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server is running on http://localhost:${port}`);
+});
+
+
+------------------
+https://www.youtube.com/watch?v=jwp4U6v-3h4&ab_channel=SanjeevThiyagarajan
+https://www.youtube.com/watch?v=IiDkJGMmpP0&ab_channel=TechnicalRajni (5 mins upload image to AWS)
+------------------
+multer, multer-s3, aws-sdk -> packages

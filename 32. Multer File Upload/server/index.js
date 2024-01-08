@@ -1,13 +1,11 @@
 const express = require("express");
 const app = express();
 const port = 7070;
-const cors = require('cors');
-const bodyParser = require('body-parser');
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const multer = require("multer");
 const fs = require("fs");
-const path = require('path');
-const { v4: uuidv4 } = require('uuid');
-const lzutf8 = require('lzutf8');
+const { v4: uuidv4 } = require("uuid");
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -24,7 +22,7 @@ const storage = multer.diskStorage({
     cb(null, uploadFolder);
   },
   filename: (req, file, cb) => {
-    cb(null, uuidv4() + "-" + path.extname(file.originalname));
+    cb(null, uuidv4() + "-" + file.originalname);
   },
 });
 
@@ -63,17 +61,14 @@ app.post("/users", upload.single("imageFile"), (req, res) => {
     }
 
     // Read the profile picture file
-    const profilePictureData = fs.readFileSync(req.file.path, {
-      encoding: "base64",
-    });
+    const profilePictureBase=  `data:${req.file.mimetype};base64,` + fs.readFileSync(req.file.path, 'base64');
 
-    // const compressedData = lzutf8.compress(profilePictureData, { outputEncoding: 'Base64' });
     // Delete the uploaded file as it's already read
     fs.unlinkSync(req.file.path);
 
     const newUser = {
       username: username,
-      profilePicture: profilePictureData,
+      profilePicture: profilePictureBase,
     };
 
     arr.push(newUser);
@@ -95,9 +90,9 @@ app.post("/users", upload.single("imageFile"), (req, res) => {
   }
 });
 
-app.get('/users',(req,res)=>{
-  res.send({users: arr});
-})
+app.get("/users", (req, res) => {
+  res.send({ users: arr });
+});
 
 app.use("/uploads", express.static("uploads"));
 
